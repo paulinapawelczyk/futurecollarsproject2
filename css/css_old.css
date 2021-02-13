@@ -17,6 +17,7 @@ main {
 }
 
 .page-content {
+    width: 960px;
     margin: 0 auto;
 }
 
@@ -38,7 +39,7 @@ main {
     align-items: center;
     height: 50px;
     padding-right: var(--paddingLeftRight);
-    padding-left: 3%;
+    padding-left: var(--paddingLeftRight);
     font-size: 18px;
     background-color: #4E4E4E;
     color: #FFF;
@@ -51,7 +52,7 @@ main {
 }
 
 .menu {
-    display: none;
+    display: flex;
     align-items: center;
     text-align: right;
     height: 100%;
@@ -85,11 +86,11 @@ main {
 .landing-page {
     flex-basis: 100%;
     max-width: 100%;
-    height: 60vh;
+    height: calc(100vh - 50px);
     background-image: url(../images/landscape.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: left;
+    background-position: center;
     color: #FFF;
     display: flex;
 }
@@ -102,7 +103,7 @@ main {
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding-left: 3%;
+    padding-left: var(--paddingLeftRight);
     padding-right: var(--paddingLeftRight);
 
 
@@ -117,7 +118,7 @@ main {
 }
 
 .about-texts h1 {
-    flex-basis: 100%;
+    flex-basis: 70%;
     font-size: 36px;
     font-weight: bold;
     line-height: 42px;
@@ -133,7 +134,7 @@ main {
 .btn-landing {
     flex-basis: 10%;
     font-size: 18px;
-    padding: 5px 50px;
+    padding: 10px 25px;
     background-color: transparent;
     border: 3px solid #FFF;
     text-align: center;
@@ -154,6 +155,8 @@ main {
     max-width: 100%;
     flex-wrap: wrap;
     align-items: center;
+    padding-right: var(--paddingLeftRight);
+    padding-left: var(--paddingLeftRight);
     background-color: rgb(241, 241, 241);
     color: #152D41;
 
@@ -164,19 +167,21 @@ main {
     font-weight: bold;
     line-height: 42px;
     text-align: left;
-    padding-bottom: 50px;
+    padding-bottom: var(--paddingTopBottom);
     padding-top: var(--paddingTopBottom);
 }
 
 .employee {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+.employee:nth-of-type(even) {
+    padding-bottom: var(--paddingTopBottom);
 }
 
 .employee .employee-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background-image: url(../images/employer.jpg);
     background-size: cover;
@@ -184,31 +189,31 @@ main {
     flex-shrink: 0;
 }
 
+.employee:nth-of-type(even) .employee-photo {
+    order: 2;
+}
+
 .employee-data {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 50px 0;
 }
 
 
 .employee:nth-of-type(odd) .employee-data {
-    text-align: justify;
-    padding-right: 5%;
-    padding-left: 5%;
-    line-height: 1.3em;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 50px;
 }
 
 .employee:nth-of-type(even) .employee-data {
-    text-align: justify;
-    padding-right: 5%;
-    padding-left: 5%;
-    line-height: 1.3em;
+    text-align: right;
+    padding-right: 50px;
+    padding-left: 0;
 }
 
 .employee-data h2 {
     font-weight: bold;
-    padding-bottom: 15px;
 }
 
 /* offer */
@@ -216,20 +221,20 @@ main {
     max-width: 100%;
     flex-basis: 100%;
     flex-wrap: wrap;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding-right: var(--paddingLeftRight);
+    padding-left: var(--paddingLeftRight);
     background-color: #405D78;
 }
 
 .offer h1 {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 36px;
     line-height: 42px;
     color: #FFF;
-    padding-top: 50px;
+    padding-top: var(--paddingTopBottom);
     max-width: 100%;
-    text-align: center;
-    padding-bottom: 50px;
+
+
 }
 
 .offer-container {
@@ -241,16 +246,16 @@ main {
     justify-content: center;
     align-items: flex-start;
     align-content: space-between;
+    padding: 50px 100px 20px 100px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    padding-bottom: 35px;
+
 }
 
 .box {
-    box-sizing: border-box;
-    flex-basis: 300px;
-    min-height: 300px;
+    flex-basis: 130px;
+    min-height: 130px;
     margin: 15px 15px;
-    padding: 100px 100px;
+    padding: 40px 40px;
     background-color: rgb(241, 241, 241);
     text-align: center;
     display: flex;
@@ -260,7 +265,6 @@ main {
     transition: 0.5s linear;
     cursor: pointer;
     position: relative;
-    font-size: 18px;
 }
 
 .box:hover {
@@ -268,12 +272,12 @@ main {
 }
 
 .new {
-    width: 10%;
-    height: 10%;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     position: absolute;
-    top: -5%;
-    left: -5%;
+    top: -7.5px;
+    left: -7.5px;
     background-color: #E07A64;
 }
 
@@ -281,19 +285,18 @@ main {
 .footer {
     flex-basis: 100%;
     height: 71px;
-    padding: 30px 5%;
+    padding-right: var(--paddingLeftRight);
+    padding-left: var(--paddingLeftRight);
     display: flex;
-    flex-direction: column;
     align-items: center;
     color: #FFF;
     background-color: #4E4E4E;
 }
 
 .footer p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 21px;
     font-weight: bold;
-    padding-bottom: 12px;
 }
 
 .social-media {
@@ -315,127 +318,3 @@ main {
 .social-media a:first-of-type {
     margin-right: 15px;
 }
-
-@media screen and (min-width: 1200px) {
-    .page-content {
-        width: 960px;
-    }
-
-    .navigation {
-        padding-left: var(--paddingLeftRight);
-    }
-
-    .menu {
-        display: flex;
-    }
-
-    .landing-page {
-        height: calc(100vh - 50px);
-        background-position: left;
-    }
-
-    .cover-img {
-        padding-left: var(--paddingLeftRight);
-    }
-
-    .about-texts h1 {
-        flex-basis: 70%;
-    }
-
-    .about {
-        padding-right: var(--paddingLeftRight);
-        padding-left: var(--paddingLeftRight);
-    }
-
-    .about h1 {
-        padding-bottom: var(--paddingTopBottom);
-    }
-
-    .employee {
-        flex-direction: row;
-        align-items: stretch;
-
-    }
-
-    .employee .employee-photo {
-        width: 200px;
-        height: 200px;
-    }
-
-    .employee:nth-of-type(even) .employee-photo {
-        order: 2;
-    }
-
-    .employee-data {
-        padding: 0;
-    }
-
-    .employee:nth-of-type(even) {
-        padding-bottom: var(--paddingTopBottom);
-    }
-
-    .employee:nth-of-type(odd) .employee-data {
-        text-align: left;
-        padding-right: 0;
-        padding-left: 50px;
-        line-height: 1.2em;
-    }
-
-    .employee:nth-of-type(even) .employee-data {
-        text-align: right;
-        padding-right: 50px;
-        padding-left: 0;
-    }
-
-    .employee-data h2 {
-        font-weight: bold;
-        padding-bottom: 0px;
-    }
-
-    .offer h1 {
-        font-size: 36px;
-        text-align: left;
-        padding-top: var(--paddingTopBottom);
-        padding-bottom: 0px;
-    }
-
-    .offer {
-        padding-right: var(--paddingLeftRight);
-        padding-left: var(--paddingLeftRight);
-    }
-
-    .offer-container {
-        padding: 50px 100px 20px 100px;
-    }
-
-    .box {
-        box-sizing: content-box;
-        flex-basis: 130px;
-        min-height: 130px;
-        padding: 40px 40px;
-    }
-
-    .new {
-        width: 15px;
-        height: 15px;
-        top: -7.5px;
-        left: -7.5px;
-    }
-
-    .footer {
-        flex-direction: row;
-        padding-right: var(--paddingLeftRight);
-        padding-left: var(--paddingLeftRight);
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .footer p {
-        font-size: 18px;
-        padding-bottom: 0px;
-
-    }
-
-    .btn-landing {
-        padding: 8px 35px;
-    }
