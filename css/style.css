@@ -96,16 +96,14 @@ main {
 
 .cover-img {
     flex-basis: 100%;
-    height: 100%;
+    height: calc(100vh - 50px);
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding-left: 3%;
+    padding-left: 5%;
     padding-right: var(--paddingLeftRight);
-
-
 }
 
 .about-texts {
@@ -316,17 +314,22 @@ main {
     margin-right: 15px;
 }
 
-@media screen and (min-width: 1200px) {
-    .page-content {
-        width: 960px;
+@media screen and (min-width: 768px) {
+    .menu {
+        display: flex;
     }
 
     .navigation {
         padding-left: var(--paddingLeftRight);
     }
 
-    .menu {
-        display: flex;
+    .cover-img {
+        padding-left: 5%;
+        padding-right: var(--paddingLeftRight);
+    }
+
+    .btn-landing {
+        padding: 10px 45px;
     }
 
     .landing-page {
@@ -334,21 +337,35 @@ main {
         background-position: left;
     }
 
-    .cover-img {
-        padding-left: var(--paddingLeftRight);
+    .employee .employee-photo {
+        width: 190px;
+        height: 190px;
+    }
+
+    .offer h1 {
+        font-size: 32px;
+    }
+
+    .box {
+        box-sizing: content-box;
+        flex-basis: 200px;
+        min-height: 200px;
+        padding: 30px 30px;
+    }
+}
+
+@media screen and (min-width: 930px) {
+    .page-content {
+        width: 820px;
     }
 
     .about-texts h1 {
         flex-basis: 70%;
     }
 
-    .about {
+    .cover-img {
+        padding-left: 8%;
         padding-right: var(--paddingLeftRight);
-        padding-left: var(--paddingLeftRight);
-    }
-
-    .about h1 {
-        padding-bottom: var(--paddingTopBottom);
     }
 
     .employee {
@@ -392,6 +409,46 @@ main {
         padding-bottom: 0px;
     }
 
+    .footer {
+        flex-direction: row;
+        padding-right: var(--paddingLeftRight);
+        padding-left: var(--paddingLeftRight);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .footer p {
+        font-size: 18px;
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .page-content {
+        width: 960px;
+    }
+
+    .navigation {
+        padding-left: var(--paddingLeftRight);
+    }
+
+    .cover-img {
+        padding-left: var(--paddingLeftRight);
+    }
+
+    .btn-landing {
+        padding: 8px 35px;
+    }
+
+    .about {
+        padding-right: var(--paddingLeftRight);
+        padding-left: var(--paddingLeftRight);
+    }
+
+    .about h1 {
+        padding-bottom: var(--paddingTopBottom);
+    }
+
     .offer h1 {
         font-size: 36px;
         text-align: left;
@@ -409,7 +466,6 @@ main {
     }
 
     .box {
-        box-sizing: content-box;
         flex-basis: 130px;
         min-height: 130px;
         padding: 40px 40px;
@@ -422,20 +478,4 @@ main {
         left: -7.5px;
     }
 
-    .footer {
-        flex-direction: row;
-        padding-right: var(--paddingLeftRight);
-        padding-left: var(--paddingLeftRight);
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .footer p {
-        font-size: 18px;
-        padding-bottom: 0px;
-
-    }
-
-    .btn-landing {
-        padding: 8px 35px;
-    }
+}
